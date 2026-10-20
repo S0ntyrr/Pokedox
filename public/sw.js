@@ -1,5 +1,6 @@
 const CACHE = 'pokedex-v3'
-const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icon.svg']
+const SCOPE = new URL('./', self.registration.scope).pathname
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg']
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -25,7 +26,7 @@ self.addEventListener('fetch', (event) => {
   if (!url.protocol.startsWith('http')) return
 
   const cacheFirst =
-    url.pathname.startsWith('/assets/') ||
+    url.pathname.startsWith(SCOPE + 'assets/') ||
     /\.(png|woff2?)$/.test(url.pathname) ||
     url.hostname === 'fonts.gstatic.com'
 
@@ -35,7 +36,7 @@ self.addEventListener('fetch', (event) => {
       : fetchAndStore(req).catch(() =>
           caches
             .match(req)
-            .then((hit) => hit || (req.mode === 'navigate' ? caches.match('/index.html') : Response.error())),
+            .then((hit) => hit || (req.mode === 'navigate' ? caches.match('./index.html') : Response.error())),
         ),
   )
 })

@@ -1,17 +1,18 @@
-{
-  "name": "Pokédex",
-  "short_name": "Pokédex",
-  "description": "Pokédex con los 151 Pokémon de la primera generación.",
-  "id": "/",
-  "start_url": "/",
-  "scope": "/",
+﻿{
+  "name": "PokÃ©dex",
+  "short_name": "PokÃ©dex",
+  "description": "PokÃ©dex con los 151 PokÃ©mon de la primera generaciÃ³n.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#f5f0e5",
   "theme_color": "#d72b32",
   "lang": "es",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
   ]
 }
+
